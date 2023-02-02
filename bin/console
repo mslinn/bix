@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 
+# Added these in a vain attempt to get console to run
+# cannot load such file -- /home/mslinn/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/dry-system-1.0.1/lib/dry/system/config (LoadError)
+# from /home/mslinn/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/dry-system-1.0.1/lib/dry/system/container.rb:62:in `<class:Container>'
+# from /home/mslinn/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/dry-system-1.0.1/lib/dry/system/container.rb:54:in `<module:System>'
+# from /home/mslinn/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/dry-system-1.0.1/lib/dry/system/container.rb:10:in `<module:Dry>'
+# from /home/mslinn/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/gems/dry-system-1.0.1/lib/dry/system/container.rb:9:in `<top (required)>'
+# from /mnt/_/work/ruby/bix/config/application.rb:5:in `require'
+# from /mnt/_/work/ruby/bix/config/application.rb:5:in `<top (required)>'
+# from bin/console:6:in `require_relative'
+# from bin/console:6:in `<main>'
+require 'rom'
+require 'rom-sql'
+require 'rom-repository'
+
 require_relative '../config/application'
 
 Bix::Application.finalize!

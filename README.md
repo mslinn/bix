@@ -9,29 +9,30 @@ and updated the code according to the
 
 
 ## Type Along
-The instructions sometimes need to tweaked in order for them to work:
+The instructions need to tweaked in order for them to work.
+Following are updated commands.
 
  1. To create the PostgreSQL database, run:
 
         sudo su postgres -c createdb bix_dev
 
- 2. To generate a migration with ROM, run:
+ 2. Update `bundler`:
+
+        bundle update --bundler
+
+ 3. To generate a migration with ROM, run:
 
         bundle exec rake "db:create_migration[create_users]"
 
- 3. To run the migration, run:
+ 4. To run the migration, run:
 
         bundle exec rake db:migrate
-
- 4. Update `bundler`:
-
-        bundle update --bundler
 
  5. Run the `console` app:
     Auto require doesn't seem to be working.
     Not sure how to fix these errors.
 
-    ```shell
+    ```ruby
     $ bin/console
 
     irb(main):001:0> Bix::Repos::UserRepo.new(Bix::Application['container'])
@@ -42,7 +43,7 @@ The instructions sometimes need to tweaked in order for them to work:
     (irb):2:in '<main>': uninitialized constant Bix::Repos (NameError)
             from bin/console:8:in '<main>'
 
-    # This also fails, as reported by [`mapanett`](https://github.com/radar/bix/pull/2/commits/705b5d88eca84fafbacf78305c6c227f25098c9e)
+    # This also fails, as reported by {https://github.com/radar/bix/pull/2/commits/705b5d88eca84fafbacf78305c6c227f25098c9e `mapanett`}
     irb(main):003:0> user_repo = Bix::Application['repos.user_repo']
     /mnt/_/work/ruby/bix/lib/bix/repos/user_repo.rb:3:in `<module:Repos>': uninitialized constant Bix::Repos::ROM (NameError)
 

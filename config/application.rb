@@ -3,6 +3,7 @@ require_relative "boot"
 require "dry/auto_inject"
 require 'dry/system'
 require "dry/system/container"
+require './lib/bix/repos/user_repo' # FIXME: Why does this not autoload?
 
 module Bix
   class Application < Dry::System::Container
